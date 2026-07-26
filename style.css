@@ -160,7 +160,7 @@ img {
 }
 
 
-/* LUNAVERA */
+/* FEATURED ARTIST SYSTEM */
 
 .artist-featured {
   min-height: 100vh;
@@ -224,92 +224,58 @@ img {
 }
 
 
-/* ROZANNE LAMME */
+/* ROZANNE — REVERSED FEATURE */
 
-.artist-rozanne {
-  min-height: auto;
-  display: block;
-  padding: 0;
+.artist-featured-reverse {
+  grid-template-columns: 55px minmax(420px, 1.2fr) minmax(300px, 0.8fr);
   background: #dbe5eb;
   color: var(--ink);
   border-bottom: none;
-  overflow: hidden;
 }
 
-.rozanne-topline {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 38px 4vw 32px;
+.artist-featured-reverse .artist-number {
+  color: rgba(10, 10, 10, 0.5);
 }
 
-.rozanne-topline .artist-number {
-  padding-top: 0;
-  color: rgba(10, 10, 10, 0.55);
+.artist-featured-reverse .artist-type {
+  color: rgba(10, 10, 10, 0.58);
 }
 
-.rozanne-topline .artist-type {
-  margin: 0;
-  color: rgba(10, 10, 10, 0.65);
+.artist-featured-reverse .artist-content {
+  padding-left: 4vw;
 }
 
-.rozanne-visual {
+.artist-featured-reverse h2 {
   position: relative;
-  width: calc(100% - 8vw);
-  height: min(70vw, 860px);
-  margin: 0 4vw;
-  overflow: hidden;
+  z-index: 3;
+  margin-left: 0;
+  margin-right: -10vw;
+  font-style: italic;
+  color: var(--ink);
+  text-shadow: none;
 }
 
-.rozanne-visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.artist-featured-reverse .artist-description {
+  color: var(--ink);
+}
+
+.artist-featured-reverse .artist-content a {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+.artist-featured-reverse .artist-image {
+  position: relative;
+  z-index: 1;
+}
+
+.artist-featured-reverse .artist-image img {
+  aspect-ratio: 1 / 1.16;
   object-position: center center;
 }
 
-.artist-rozanne .rozanne-visual h2 {
-  position: absolute;
-  left: 3vw;
-  bottom: -0.06em;
-  z-index: 2;
 
-  font-family: var(--serif);
-  font-size: clamp(6rem, 13vw, 13rem);
-  font-weight: 400;
-  font-style: italic;
-  line-height: 0.68;
-  letter-spacing: -0.045em;
-
-  color: var(--white);
-  text-shadow: 0 3px 30px rgba(0, 0, 0, 0.22);
-}
-
-.rozanne-bottom {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: end;
-  gap: 50px;
-  padding: 48px 4vw 70px;
-}
-
-.artist-rozanne .artist-description {
-  max-width: 520px;
-  margin: 0;
-  font-size: clamp(1.7rem, 2.8vw, 3rem);
-  color: var(--ink);
-}
-
-.artist-rozanne .rozanne-bottom a {
-  display: inline-block;
-  align-self: end;
-  padding-bottom: 8px;
-  color: var(--ink);
-  border-bottom: 1px solid var(--ink);
-}
-
-
-/* OTHER ARTISTS */
+/* OTHER ARTIST COMPOSITIONS */
 
 .artist-03 {
   padding-left: 10vw;
@@ -473,9 +439,10 @@ img {
   }
 
 
-  /* LUNAVERA MOBILE */
+  /* FEATURED ARTISTS MOBILE */
 
-  .artist-featured {
+  .artist-featured,
+  .artist-featured-reverse {
     min-height: auto;
     display: grid;
     grid-template-columns: 30px 1fr;
@@ -483,37 +450,52 @@ img {
     padding: 55px 20px 70px;
   }
 
-  .artist-featured .artist-number {
+  .artist-featured .artist-number,
+  .artist-featured-reverse .artist-number {
     grid-column: 1;
     grid-row: 1;
     padding-top: 0;
   }
 
-  .artist-featured .artist-image {
+  .artist-featured .artist-image,
+  .artist-featured-reverse .artist-image {
     grid-column: 2;
     grid-row: 1;
     width: 100%;
     max-width: none;
   }
 
-  .artist-featured .artist-image img {
+  .artist-featured .artist-image img,
+  .artist-featured-reverse .artist-image img {
     aspect-ratio: 4 / 5;
+  }
+
+  .artist-featured .artist-image img {
     object-position: center 32%;
   }
 
-  .artist-featured .artist-content {
+  .artist-featured-reverse .artist-image img {
+    object-position: center center;
+  }
+
+  .artist-featured .artist-content,
+  .artist-featured-reverse .artist-content {
     grid-column: 1 / -1;
     grid-row: 2;
     margin-top: -30px;
+    padding-left: 0;
   }
 
-  .artist-featured .artist-type {
+  .artist-featured .artist-type,
+  .artist-featured-reverse .artist-type {
     margin-bottom: 20px;
     margin-left: 35px;
   }
 
-  .artist-featured h2 {
+  .artist-featured h2,
+  .artist-featured-reverse h2 {
     margin-left: 0;
+    margin-right: 0;
     font-size: clamp(4.6rem, 22vw, 7rem);
     white-space: normal;
   }
@@ -525,64 +507,9 @@ img {
     font-size: 1.55rem;
   }
 
-  .artist-featured .artist-content a {
+  .artist-featured .artist-content a,
+  .artist-featured-reverse .artist-content a {
     margin-top: 0;
-  }
-
-
-  /* ROZANNE MOBILE */
-
-  .artist-rozanne {
-    display: block;
-    min-height: auto;
-    padding: 0;
-  }
-
-  .rozanne-topline {
-    padding: 28px 20px 24px;
-  }
-
-  .rozanne-topline .artist-number {
-    padding: 0;
-  }
-
-  .rozanne-topline .artist-type {
-    max-width: 180px;
-    text-align: right;
-    font-size: 0.58rem;
-  }
-
-  .rozanne-visual {
-    width: calc(100% - 40px);
-    height: 120vw;
-    max-height: 720px;
-    margin: 0 20px;
-  }
-
-  .rozanne-visual img {
-    object-position: center center;
-  }
-
-  .artist-rozanne .rozanne-visual h2 {
-    left: 14px;
-    bottom: 16px;
-    font-size: clamp(4.6rem, 21vw, 7rem);
-    line-height: 0.72;
-  }
-
-  .rozanne-bottom {
-    display: block;
-    padding: 35px 20px 60px;
-  }
-
-  .artist-rozanne .artist-description {
-    max-width: 330px;
-    margin: 0 0 35px;
-    font-size: 1.65rem;
-  }
-
-  .artist-rozanne .rozanne-bottom a {
-    margin: 0;
   }
 
 
