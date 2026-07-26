@@ -40,7 +40,9 @@ img {
 }
 
 
-/* HEADER */
+/* =========================================================
+   HEADER
+========================================================= */
 
 .site-header {
   width: 100%;
@@ -69,7 +71,9 @@ img {
 }
 
 
-/* HERO */
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero {
   min-height: calc(100vh - 82px);
@@ -112,12 +116,17 @@ img {
 }
 
 
-/* ARTISTS */
+/* =========================================================
+   ARTISTS
+========================================================= */
 
 .artists {
   background: var(--ink);
   color: var(--white);
 }
+
+
+/* STANDARD ARTIST */
 
 .artist {
   min-height: 58vh;
@@ -147,11 +156,11 @@ img {
 
 .artist a {
   align-self: end;
-  padding-bottom: 20px;
+  padding-bottom: 8px;
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  border-bottom: 1px solid var(--white);
+  border-bottom: 1px solid currentColor;
   transition: opacity 0.25s ease;
 }
 
@@ -160,122 +169,210 @@ img {
 }
 
 
-/* FEATURED ARTIST SYSTEM */
+/* =========================================================
+   FEATURED ARTISTS
+   LUNAVERA GLOW + ROZANNE LAMME
+========================================================= */
 
 .artist-featured {
+  position: relative;
   min-height: 100vh;
-  grid-template-columns: 55px minmax(300px, 0.8fr) minmax(420px, 1.2fr);
-  gap: clamp(30px, 5vw, 90px);
+
+  display: grid;
+  grid-template-columns:
+    55px
+    minmax(320px, 0.85fr)
+    minmax(430px, 1.15fr);
+
+  align-items: center;
+
+  gap: clamp(35px, 5vw, 90px);
+
   padding: 6vw 4vw;
+
   overflow: hidden;
 }
 
+
+/* NUMBER */
+
 .artist-featured .artist-number {
   position: relative;
-  z-index: 2;
+  z-index: 5;
+  align-self: start;
+  padding-top: 20px;
 }
 
-.artist-image {
+
+/* IMAGE */
+
+.artist-featured .artist-image {
+  position: relative;
+  z-index: 1;
+
   width: 100%;
   max-width: 570px;
+
   justify-self: center;
 }
 
-.artist-image img {
+.artist-featured .artist-image img {
   width: 100%;
+  height: auto;
+
   aspect-ratio: 1 / 1.16;
+
   object-fit: cover;
+}
+
+
+/* LUNAVERA IMAGE POSITION */
+
+.artist-01 .artist-image img {
   object-position: center 34%;
 }
 
-.artist-content {
-  align-self: center;
+
+/* CONTENT */
+
+.artist-featured .artist-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
+
+  align-self: center;
+
+  min-width: 0;
 }
 
 .artist-type {
   margin-bottom: 30px;
+
   color: var(--silver);
+
   font-size: 0.64rem;
+
   text-transform: uppercase;
+
   letter-spacing: 0.2em;
 }
 
+
+/* FEATURED ARTIST NAME */
+
 .artist-featured h2 {
-  margin-left: -10vw;
-  font-size: clamp(6rem, 12vw, 12rem);
+  position: relative;
+  z-index: 4;
+
+  font-family: var(--serif);
+
+  font-size: clamp(5.7rem, 10.5vw, 11rem);
+
+  font-weight: 400;
+
+  line-height: 0.82;
+
+  letter-spacing: -0.045em;
+
   white-space: nowrap;
-  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.35);
+
+  text-shadow:
+    0 2px 15px rgba(0, 0, 0, 0.2),
+    0 4px 30px rgba(0, 0, 0, 0.25);
 }
 
-.artist-description {
-  max-width: 480px;
-  margin-top: 35px;
-  margin-bottom: 55px;
-  font-family: var(--serif);
-  font-size: clamp(1.5rem, 2.5vw, 2.6rem);
-  line-height: 1.15;
+
+/* LUNAVERA NAME OVERLAP */
+
+.artist-01 h2 {
+  margin-left: -10vw;
 }
+
+
+/* DESCRIPTION */
+
+.artist-description {
+  max-width: 500px;
+
+  margin-top: 42px;
+  margin-bottom: 55px;
+
+  font-family: var(--serif);
+
+  font-size: clamp(1.55rem, 2.5vw, 2.6rem);
+
+  line-height: 1.1;
+
+  letter-spacing: -0.015em;
+}
+
+
+/* CTA */
 
 .artist-featured .artist-content a {
   display: inline-block;
+
+  margin: 0;
+
   padding-bottom: 8px;
 }
 
 
-/* ROZANNE — REVERSED FEATURE */
+/* =========================================================
+   ROZANNE LAMME — REVERSED FEATURE
+========================================================= */
 
 .artist-featured-reverse {
-  grid-template-columns: 55px minmax(420px, 1.2fr) minmax(300px, 0.8fr);
-  background: #dbe5eb;
-  color: var(--ink);
-  border-bottom: none;
+  grid-template-columns:
+    55px
+    minmax(430px, 1.15fr)
+    minmax(320px, 0.85fr);
 }
 
-.artist-featured-reverse .artist-number {
-  color: rgba(10, 10, 10, 0.5);
-}
 
-.artist-featured-reverse .artist-type {
-  color: rgba(10, 10, 10, 0.58);
-}
+/* Rozanne content is left */
 
 .artist-featured-reverse .artist-content {
-  padding-left: 4vw;
+  grid-column: 2;
 }
 
-.artist-featured-reverse h2 {
-  position: relative;
-  z-index: 3;
-  margin-left: 0;
-  margin-right: -10vw;
-  font-style: italic;
-  color: var(--ink);
-  text-shadow: none;
-}
 
-.artist-featured-reverse .artist-description {
-  color: var(--ink);
-}
-
-.artist-featured-reverse .artist-content a {
-  color: var(--ink);
-  border-bottom-color: var(--ink);
-}
+/* Rozanne image is right */
 
 .artist-featured-reverse .artist-image {
-  position: relative;
-  z-index: 1;
+  grid-column: 3;
 }
 
-.artist-featured-reverse .artist-image img {
-  aspect-ratio: 1 / 1.16;
+
+/* Image treatment */
+
+.artist-02 .artist-image img {
   object-position: center center;
 }
 
 
-/* OTHER ARTIST COMPOSITIONS */
+/* Rozanne name overlaps image toward right */
+
+.artist-featured-reverse h2 {
+  position: relative;
+
+  z-index: 5;
+
+  margin-right: -12vw;
+
+  font-style: italic;
+}
+
+
+/* Keep description comfortably narrower */
+
+.artist-featured-reverse .artist-description {
+  max-width: 450px;
+}
+
+
+/* =========================================================
+   LSPARIA + ZYLAXI
+========================================================= */
 
 .artist-03 {
   padding-left: 10vw;
@@ -286,27 +383,39 @@ img {
 }
 
 
-/* RELEASES */
+/* =========================================================
+   RELEASES
+========================================================= */
 
 .releases {
   min-height: 65vh;
+
   padding: 9vw 4vw;
+
   background: var(--bone);
 }
 
 .section-label {
   margin-bottom: 35px;
+
   font-size: 0.66rem;
+
   text-transform: uppercase;
+
   letter-spacing: 0.22em;
 }
 
 .releases > h2 {
   max-width: 900px;
+
   font-family: var(--serif);
+
   font-size: clamp(4rem, 8vw, 8rem);
+
   font-weight: 400;
+
   line-height: 0.9;
+
   letter-spacing: -0.035em;
 }
 
@@ -315,79 +424,155 @@ img {
 }
 
 
-/* ABOUT */
+/* =========================================================
+   ABOUT
+========================================================= */
 
 .about {
   min-height: 75vh;
+
   display: flex;
+
   flex-direction: column;
+
   justify-content: center;
+
   padding: 8vw 4vw;
+
   background: var(--white);
 }
 
 .about h2 {
   font-family: var(--serif);
+
   font-size: clamp(5rem, 12vw, 12rem);
+
   font-weight: 400;
+
   line-height: 0.85;
+
   letter-spacing: -0.045em;
 }
 
 .about-placeholder {
   max-width: 550px;
+
   margin-top: 50px;
+
   margin-left: auto;
+
   font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+
   font-weight: 300;
+
   line-height: 1.6;
 }
 
 
-/* FOOTER */
+/* =========================================================
+   FOOTER
+========================================================= */
 
 .site-footer {
   min-height: 42vh;
+
   display: grid;
+
   grid-template-columns: 2fr 1fr 1fr;
+
   align-items: end;
+
   gap: 40px;
+
   padding: 5vw 4vw;
+
   background: var(--ink);
+
   color: var(--white);
 }
 
 .footer-brand p {
   font-family: var(--serif);
+
   font-size: clamp(2.8rem, 6vw, 6rem);
+
   line-height: 1;
 }
 
 .footer-brand span {
   display: block;
+
   margin-top: 15px;
+
   font-size: 0.65rem;
+
   text-transform: uppercase;
+
   letter-spacing: 0.18em;
+
   color: var(--silver);
 }
 
 .footer-nav {
   display: flex;
+
   flex-direction: column;
+
   gap: 10px;
+
   font-size: 0.72rem;
+
   text-transform: uppercase;
+
   letter-spacing: 0.14em;
 }
 
 .copyright {
   font-size: 0.65rem;
+
   color: var(--silver);
 }
 
 
-/* MOBILE */
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .artist-featured {
+    grid-template-columns:
+      40px
+      minmax(260px, 0.9fr)
+      minmax(350px, 1.1fr);
+
+    gap: 30px;
+  }
+
+  .artist-featured-reverse {
+    grid-template-columns:
+      40px
+      minmax(350px, 1.1fr)
+      minmax(260px, 0.9fr);
+  }
+
+  .artist-featured h2 {
+    font-size: clamp(5rem, 10vw, 8rem);
+  }
+
+  .artist-01 h2 {
+    margin-left: -8vw;
+  }
+
+  .artist-featured-reverse h2 {
+    margin-right: -9vw;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 700px) {
 
@@ -403,15 +588,22 @@ img {
     font-size: 0.6rem;
   }
 
+
+  /* HERO */
+
   .hero {
     min-height: 88vh;
+
     padding: 80px 20px 30px;
   }
 
   .hero h1 {
     font-size: clamp(4rem, 20vw, 7rem);
+
     white-space: normal;
+
     overflow-wrap: anywhere;
+
     line-height: 0.82;
   }
 
@@ -424,7 +616,9 @@ img {
 
   .artist {
     min-height: 48vh;
+
     grid-template-columns: 35px 1fr;
+
     padding: 50px 20px;
   }
 
@@ -434,34 +628,51 @@ img {
 
   .artist a {
     grid-column: 2;
+
     justify-self: start;
+
     margin-top: 35px;
   }
 
 
-  /* FEATURED ARTISTS MOBILE */
+  /* FEATURED ARTISTS */
 
   .artist-featured,
   .artist-featured-reverse {
     min-height: auto;
+
     display: grid;
+
     grid-template-columns: 30px 1fr;
+
     gap: 15px;
-    padding: 55px 20px 70px;
+
+    padding: 55px 20px 75px;
   }
+
+
+  /* NUMBER */
 
   .artist-featured .artist-number,
   .artist-featured-reverse .artist-number {
     grid-column: 1;
+
     grid-row: 1;
+
     padding-top: 0;
   }
+
+
+  /* IMAGES */
 
   .artist-featured .artist-image,
   .artist-featured-reverse .artist-image {
     grid-column: 2;
+
     grid-row: 1;
+
     width: 100%;
+
     max-width: none;
   }
 
@@ -470,42 +681,68 @@ img {
     aspect-ratio: 4 / 5;
   }
 
-  .artist-featured .artist-image img {
+  .artist-01 .artist-image img {
     object-position: center 32%;
   }
 
-  .artist-featured-reverse .artist-image img {
+  .artist-02 .artist-image img {
     object-position: center center;
   }
+
+
+  /* CONTENT */
 
   .artist-featured .artist-content,
   .artist-featured-reverse .artist-content {
     grid-column: 1 / -1;
+
     grid-row: 2;
-    margin-top: -30px;
-    padding-left: 0;
+
+    margin-top: -28px;
   }
 
-  .artist-featured .artist-type,
-  .artist-featured-reverse .artist-type {
-    margin-bottom: 20px;
+  .artist-featured .artist-type {
     margin-left: 35px;
+
+    margin-bottom: 20px;
   }
+
+
+  /* ARTIST NAMES */
 
   .artist-featured h2,
   .artist-featured-reverse h2 {
     margin-left: 0;
+
     margin-right: 0;
-    font-size: clamp(4.6rem, 22vw, 7rem);
+
     white-space: normal;
+
+    font-size: clamp(4.3rem, 19vw, 7rem);
+
+    line-height: 0.83;
   }
 
-  .artist-description {
-    max-width: 330px;
-    margin-top: 25px;
+  .artist-featured-reverse h2 {
+    font-style: italic;
+  }
+
+
+  /* DESCRIPTION */
+
+  .artist-description,
+  .artist-featured-reverse .artist-description {
+    max-width: 340px;
+
+    margin-top: 28px;
+
     margin-bottom: 35px;
+
     font-size: 1.55rem;
   }
+
+
+  /* CTA */
 
   .artist-featured .artist-content a,
   .artist-featured-reverse .artist-content a {
@@ -513,7 +750,7 @@ img {
   }
 
 
-  /* REMAINING ARTISTS */
+  /* LSPARIA + ZYLAXI */
 
   .artist-03 {
     padding-left: 20px;
@@ -524,7 +761,7 @@ img {
   }
 
 
-  /* REST OF SITE */
+  /* OTHER SECTIONS */
 
   .releases,
   .about {
@@ -537,7 +774,9 @@ img {
 
   .site-footer {
     min-height: 50vh;
+
     grid-template-columns: 1fr;
+
     padding: 70px 20px 30px;
   }
 }
