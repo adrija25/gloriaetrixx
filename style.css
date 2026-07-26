@@ -160,7 +160,7 @@ img {
 }
 
 
-/* LUNAVERA FEATURE */
+/* LUNAVERA */
 
 .artist-featured {
   min-height: 100vh;
@@ -224,11 +224,92 @@ img {
 }
 
 
-/* OTHER ARTIST COMPOSITIONS */
+/* ROZANNE LAMME */
 
-.artist-02 h2 {
-  font-style: italic;
+.artist-rozanne {
+  min-height: auto;
+  display: block;
+  padding: 0;
+  background: #dbe5eb;
+  color: var(--ink);
+  border-bottom: none;
+  overflow: hidden;
 }
+
+.rozanne-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 38px 4vw 32px;
+}
+
+.rozanne-topline .artist-number {
+  padding-top: 0;
+  color: rgba(10, 10, 10, 0.55);
+}
+
+.rozanne-topline .artist-type {
+  margin: 0;
+  color: rgba(10, 10, 10, 0.65);
+}
+
+.rozanne-visual {
+  position: relative;
+  width: calc(100% - 8vw);
+  height: min(70vw, 860px);
+  margin: 0 4vw;
+  overflow: hidden;
+}
+
+.rozanne-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.artist-rozanne .rozanne-visual h2 {
+  position: absolute;
+  left: 3vw;
+  bottom: -0.06em;
+  z-index: 2;
+
+  font-family: var(--serif);
+  font-size: clamp(6rem, 13vw, 13rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 0.68;
+  letter-spacing: -0.045em;
+
+  color: var(--white);
+  text-shadow: 0 3px 30px rgba(0, 0, 0, 0.22);
+}
+
+.rozanne-bottom {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 50px;
+  padding: 48px 4vw 70px;
+}
+
+.artist-rozanne .artist-description {
+  max-width: 520px;
+  margin: 0;
+  font-size: clamp(1.7rem, 2.8vw, 3rem);
+  color: var(--ink);
+}
+
+.artist-rozanne .rozanne-bottom a {
+  display: inline-block;
+  align-self: end;
+  padding-bottom: 8px;
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+
+/* OTHER ARTISTS */
 
 .artist-03 {
   padding-left: 10vw;
@@ -449,6 +530,64 @@ img {
   }
 
 
+  /* ROZANNE MOBILE */
+
+  .artist-rozanne {
+    display: block;
+    min-height: auto;
+    padding: 0;
+  }
+
+  .rozanne-topline {
+    padding: 28px 20px 24px;
+  }
+
+  .rozanne-topline .artist-number {
+    padding: 0;
+  }
+
+  .rozanne-topline .artist-type {
+    max-width: 180px;
+    text-align: right;
+    font-size: 0.58rem;
+  }
+
+  .rozanne-visual {
+    width: calc(100% - 40px);
+    height: 120vw;
+    max-height: 720px;
+    margin: 0 20px;
+  }
+
+  .rozanne-visual img {
+    object-position: center center;
+  }
+
+  .artist-rozanne .rozanne-visual h2 {
+    left: 14px;
+    bottom: 16px;
+    font-size: clamp(4.6rem, 21vw, 7rem);
+    line-height: 0.72;
+  }
+
+  .rozanne-bottom {
+    display: block;
+    padding: 35px 20px 60px;
+  }
+
+  .artist-rozanne .artist-description {
+    max-width: 330px;
+    margin: 0 0 35px;
+    font-size: 1.65rem;
+  }
+
+  .artist-rozanne .rozanne-bottom a {
+    margin: 0;
+  }
+
+
+  /* REMAINING ARTISTS */
+
   .artist-03 {
     padding-left: 20px;
   }
@@ -456,6 +595,9 @@ img {
   .artist-04 h2 {
     text-align: left;
   }
+
+
+  /* REST OF SITE */
 
   .releases,
   .about {
