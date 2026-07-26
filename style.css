@@ -780,3 +780,11 @@ img {
     padding: 70px 20px 30px;
   }
 }
+/* ROZANNE DESKTOP NAME REFINEMENT */
+
+@media (min-width: 701px) {
+  .artist-02 h2 {
+    font-size: clamp(5rem, 8.2vw, 8.7rem);
+    margin-right: -8vw;
+  }
+}
