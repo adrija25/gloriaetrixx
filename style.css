@@ -34,6 +34,11 @@ a {
   text-decoration: none;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 
 /* HEADER */
 
@@ -155,7 +160,71 @@ a {
 }
 
 
-/* Give each artist a subtly different composition */
+/* LUNAVERA FEATURE */
+
+.artist-featured {
+  min-height: 100vh;
+  grid-template-columns: 55px minmax(300px, 0.8fr) minmax(420px, 1.2fr);
+  gap: clamp(30px, 5vw, 90px);
+  padding: 6vw 4vw;
+  overflow: hidden;
+}
+
+.artist-featured .artist-number {
+  position: relative;
+  z-index: 2;
+}
+
+.artist-image {
+  width: 100%;
+  max-width: 570px;
+  justify-self: center;
+}
+
+.artist-image img {
+  width: 100%;
+  aspect-ratio: 1 / 1.16;
+  object-fit: cover;
+  object-position: center 34%;
+}
+
+.artist-content {
+  align-self: center;
+  position: relative;
+  z-index: 2;
+}
+
+.artist-type {
+  margin-bottom: 30px;
+  color: var(--silver);
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.artist-featured h2 {
+  margin-left: -10vw;
+  font-size: clamp(6rem, 12vw, 12rem);
+  white-space: nowrap;
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.35);
+}
+
+.artist-description {
+  max-width: 480px;
+  margin-top: 35px;
+  margin-bottom: 55px;
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 2.5vw, 2.6rem);
+  line-height: 1.15;
+}
+
+.artist-featured .artist-content a {
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+
+/* OTHER ARTIST COMPOSITIONS */
 
 .artist-02 h2 {
   font-style: italic;
@@ -303,6 +372,9 @@ a {
     margin-top: 40px;
   }
 
+
+  /* STANDARD ARTISTS */
+
   .artist {
     min-height: 48vh;
     grid-template-columns: 35px 1fr;
@@ -318,6 +390,64 @@ a {
     justify-self: start;
     margin-top: 35px;
   }
+
+
+  /* LUNAVERA MOBILE */
+
+  .artist-featured {
+    min-height: auto;
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    gap: 15px;
+    padding: 55px 20px 70px;
+  }
+
+  .artist-featured .artist-number {
+    grid-column: 1;
+    grid-row: 1;
+    padding-top: 0;
+  }
+
+  .artist-featured .artist-image {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    max-width: none;
+  }
+
+  .artist-featured .artist-image img {
+    aspect-ratio: 4 / 5;
+    object-position: center 32%;
+  }
+
+  .artist-featured .artist-content {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin-top: -30px;
+  }
+
+  .artist-featured .artist-type {
+    margin-bottom: 20px;
+    margin-left: 35px;
+  }
+
+  .artist-featured h2 {
+    margin-left: 0;
+    font-size: clamp(4.6rem, 22vw, 7rem);
+    white-space: normal;
+  }
+
+  .artist-description {
+    max-width: 330px;
+    margin-top: 25px;
+    margin-bottom: 35px;
+    font-size: 1.55rem;
+  }
+
+  .artist-featured .artist-content a {
+    margin-top: 0;
+  }
+
 
   .artist-03 {
     padding-left: 20px;
